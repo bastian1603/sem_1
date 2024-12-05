@@ -153,28 +153,28 @@ li {
 }
 
 /* Styling untuk container tampil-catatan */
-.tampil-catatan {
-    border: 1px solid #ddd; /* Border untuk pembatas */
-    border-radius: 8px; /* Membuat border menjadi bulat */
-    margin: 15px 20px; /* Spasi antar catatan */
-    padding: 15px; /* Ruang dalam kontainer */
-    background-color: #f9f9f9; /* Warna latar yang lembut */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-}
+/* .tampil-catatan {
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    margin: 15px 20px; 
+    padding: 15px; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+} */
 
 /* Styling untuk judul-catatan */
-.tampil-catatan .judul-catatan {
-    font-size: 1.25rem; /* Ukuran font lebih besar */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    color: #333; /* Warna teks */
-    margin-bottom: 10px; /* Spasi bawah */
-}
+/* .tampil-catatan .judul-catatan {
+    font-size: 1.25rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin-bottom: 10px; 
+} */
 
 /* Styling untuk isi-catatan */
-.tampil-catatan .isi-catatan {
-    font-size: 1rem; /* Ukuran font standar */
-    color: #555; /* Warna teks */
-    line-height: 1.6; /* Jarak antar baris */
-}
+/* .tampil-catatan .isi-catatan {
+    font-size: 1rem; 
+    color: #555; 
+    line-height: 1.6; 
+} */
 
 

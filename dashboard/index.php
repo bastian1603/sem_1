@@ -6,13 +6,13 @@
     <title>nyoba side bar</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../asset/css/sidebar.css">
+    <link rel="stylesheet" href="../asset/css/dashboard.css">
 </head>
 <body>
 
     <?php 
-        include 'koneksi.php';
+        include '../config/koneksi.php';
     ?>
     
     <div class="wrapper">
@@ -21,118 +21,38 @@
 
             <div class="profile-container">
                 <div class="profile">
-                    <img src="temporary-profile-placeholder-1.jpg" alt="" class="profile-pic"> <div>Username</div>
+                    <img src="../asset/image/temporary-profile-placeholder-1.jpg" alt="" class="profile-pic"> <div>Username</div>
                 </div>
             </div>
     
             <hr>
     
             <ul>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_catatan"><img src="asset/square-list-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Catatan</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_jadwal"><img src="asset/table-alt-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Jadwal</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tugas"><img src="asset/clock-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tugas</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tantangan"><img src="asset/hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tantangan</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_catatan"><img src="../asset/image/square-list-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Catatan</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_jadwal"><img src="../asset/image/table-alt-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Jadwal</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tugas"><img src="../asset/image/clock-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tugas</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tantangan"><img src="../asset/image/hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tantangan</div></li>
             </ul>
     
             <hr>
-
-            <!-- <p align="center">Today Tasks</p>
-
-            <div class="task">
-
-                <ul class="task-list">
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                    
-                    <li class="task-item flex-start">
-                        <p class="judul-task">Judul Tugas</p>
-                        <p>25/12/2024</p>
-                    </li>
-                </ul>
-
-            </div> -->
     
             <div class="setting-container flex-start">
                 <hr>
     
                 <div class="flex-start setting">
-                    <img src="hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Pengaturan</div>
+                    <img src="../asset/hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Pengaturan</div>
                 </div>
 
                 <hr>
             </div>
     
         </section>
-
+        
         
         <section class="konten">
-
             <div class="isi_catatan">
+                <h2 class="content-title">Catatan</h2>
+
                 <?php 
                 
                     $data_catatan = mysqli_query($conn, "SELECT * FROM catatan");
@@ -152,7 +72,44 @@
             </div>
 
 
-        </section>    
+    <!-- Bagian Jadwal -->
+    <div class="isi_jadwal">
+        <h2 class="content-title">Jadwal</h2>
+
+        <div class="tampil-jadwal">
+            <div class="judul-jadwal">[Judul Jadwal 1]</div>
+            <div class="tanggal-jadwal">20 Nov 2024 - 27 Nov 2024</div>
+            <div class="isi-jadwal">[Isi Jadwal 1]</div>
+        </div>
+
+        <div class="tampil-jadwal">
+            <div class="judul-jadwal">[Judul Jadwal 2]</div>
+            <div class="tanggal-jadwal">28 Nov 2024 - 5 Des 2024</div>
+            <div class="isi-jadwal">[Isi Jadwal 2]</div>
+        </div>
+    </div>
+
+    <!-- Bagian Tugas -->
+    <div class="isi_tugas">
+        <h2 class="content-title">Tugas</h2>
+
+        <div class="tampil-tugas">
+            <div class="judul-tugas">[Judul Tugas 1]</div>
+            <div class="tanggal-tugas">25 Nov 2024 | 14:00</div>
+            <div class="isi-tugas">[Isi Tugas 1]</div>
+        </div>
+
+        <div class="tampil-tugas">
+            <div class="judul-tugas">[Judul Tugas 2]</div>
+            <div class="tanggal-tugas">26 Nov 2024 | 16:30</div>
+            <div class="isi-tugas">[Isi Tugas 2]</div>
+        </div>
+    </div>
+
+</section>
+
+
+  
 
     </div>
 
@@ -168,7 +125,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                 </div>
 
-                <form action="input_catatan.php" method="POST">
+                <form action="../config/inp" method="POST">
 
                     <div class="modal-body">
                             <label for="catatan_judul" class="form-label">Judul</label>

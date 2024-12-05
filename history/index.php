@@ -17,17 +17,17 @@
 
             <div class="profile-container">
                 <div class="profile">
-                    <img src="temporary-profile-placeholder-1.jpg" alt="" class="profile-pic"> <div>Username</div>
+                    <img src="../asset/image/temporary-profile-placeholder-1.jpg" alt="" class="profile-pic"> <div>Username</div>
                 </div>
             </div>
     
             <hr>
     
             <ul>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_catatan"><img src="square-list-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Catatan</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_jadwal"><img src="table-alt-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Jadwal</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tugas"><img src="clock-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tugas</div></li>
-                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tantangan"><img src="hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tantangan</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_catatan"><img src="../asset/image/square-list-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Catatan</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_jadwal"><img src="../asset/image/table-alt-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Jadwal</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tugas"><img src="../asset/image/clock-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tugas</div></li>
+                <li class="flex-start li-fitur" data-bs-toggle="modal" data-bs-target="#modal_tantangan"><img src="../asset/image/hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Tantangan</div></li>
             </ul>
     
             <hr>
@@ -117,7 +117,7 @@
                 <hr>
     
                 <div class="flex-start setting">
-                    <img src="hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Pengaturan</div>
+                    <img src="asset/hexagon-svgrepo-com.svg" alt="icon" class="icon"> <div class="fitur">Pengaturan</div>
                 </div>
 
                 <hr>
@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="" method="POST">
+                    <form action="../config/catatan/input_catatan.php" method="POST">
                         <label for="catatan_judul" class="form-label">Judul</label>
                         <input type="text" name="catatan_judul" id="catatan_judul" class="form-control">
                         
