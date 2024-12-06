@@ -1,5 +1,5 @@
 <?php 
-
+    include 'is_login.php';
     include 'koneksi.php';
 
     $nim = $_GET['nim'];

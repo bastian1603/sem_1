@@ -1,3 +1,7 @@
+<?php 
+    include 'is_login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +43,8 @@
 
     <!-- Main Content -->
     <div class="row g-0 mt-5">
+    <!-- Main Content -->
+    <div class="row g-0 mt-5">
         <!-- Sidebar -->
         <div class="col-md-2 bg-info mt-2 pt-4">
             <ul class="nav flex-column ms-3 mb-5">
@@ -48,25 +54,35 @@
                     </a>
                     <hr class="bg-secondary">
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="mahasiswa.php">
-                        <i class="fas fa-user-graduate me-2"></i>Daftar Mahasiswa
-                    </a>
-                    <hr class="bg-secondary">
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="dosen.php">
-                        <i class="fas fa-chalkboard-teacher me-2"></i>Daftar Dosen
-                    </a>
-                    <hr class="bg-secondary">
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="pegawai.php">
-                        <i class="fas fa-users me-2"></i>Daftar Pegawai
-                    </a>
-                    <hr class="bg-secondary">
-                </li>
-            </ul>
+        
+                <?php if ($role === 'mahasiswa' || $role === 'admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="mahasiswa.php">
+                            <i class="fas fa-user-graduate me-2"></i>Daftar Mahasiswa
+                        </a>
+                        <hr class="bg-secondary">
+                    </li>
+                <?php endif;?>
+
+                <?php if ($role === 'dosen' || $role === 'admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="dosen.php">
+                            <i class="fas fa-chalkboard-teacher me-2"></i>Daftar Dosen
+                        </a>
+                        <hr class="bg-secondary">
+                    </li>
+                <?php endif;?>
+                
+                <?php if ($role === 'pegawai' || $role === 'admin'): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="pegawai.php">
+                            <i class="fas fa-users me-2"></i>Daftar Pegawai
+                        </a>
+                        <hr class="bg-secondary">
+                    </li>
+                <?php endif;?>
+
+                </ul>
         </div>
 
         <!-- Content Area -->
