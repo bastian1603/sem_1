@@ -5,14 +5,16 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    $user = mysqli_real_escape_string($conn, $user);
+    $pass = mysqli_real_escape_string($conn, $pass);
+    $data = mysqli_query($conn, "SELECT * FROM users WHERE username='$user' AND password='$pass' ");
+    $row = mysqli_fetch_array($data);
     
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
+    
+    if (mysqli_num_rows($data) > 0) {
        
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $row['id'];
         header("Location: ../../dashboard/"); //PINDAHI  KE DASHBOARD DISINI//
         exit();
 
