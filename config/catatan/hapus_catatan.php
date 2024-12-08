@@ -1,7 +1,7 @@
 <?php 
     include "../koneksi.php";
 
-    $id_catatan = $_POST['idCatatan'];
+    $id_catatan = $_GET["id_catatan"];
 
     $execute = mysqli_query($conn, "DELETE FROM catatan WHERE id_catatan = '$id_catatan'");
 

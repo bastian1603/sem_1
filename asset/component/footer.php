@@ -78,11 +78,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
-            <form action="" method="POST">
+            <form action="../config/jadwal/input_jadwal.php" method="POST">
 
                 <div class="modal-body">
-                    <label for="tantangan_judul" class="form-label">Judul</label>
-                    <input type="text" name="tantangan_judul" id="tantangan_judul" class="form-control">
+                    <label for="judul_jadwal" class="form-label">Judul</label>
+                    <input type="text" name="judul_jadwal" id="judul_jadwal" class="form-control">
 
                     <label for="tanggal_mulai" class="form-label">Tanggal mulai</label>
                     <input type="date" name="tanggal_mulai" id="tanggal_mulai" class="form-control">
@@ -97,48 +97,47 @@
 
                     <div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="senin" id="senin" class="form-check-input">
+                            <input type="checkbox" value="1" id="senin" name="list_hari[0]" class="form-check-input">
                             <label for="senin">Senin</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="selasa" id="selasa" class="form-check-input">
-                            <label for="senin">Selasa</label>
+                            <input type="checkbox" value="1" id="selasa" name="list_hari[1]" class="form-check-input">
+                            <label for="selasa">Selasa</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="rabu" id="rabu" class="form-check-input">
-                            <label for="senin">Rabu</label>
+                            <input type="checkbox" value="1" id="rabu" name="list_hari[2]" class="form-check-input">
+                            <label for="rabu">Rabu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="kamis" id="kamis" class="form-check-input">
-                            <label for="senin">Kamis</label>
+                            <input type="checkbox" value="1" id="kamis" name="list_hari[3]" class="form-check-input">
+                            <label for="kamis">Kamis</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="jumat" id="jumat" class="form-check-input">
-                            <label for="senin">Jumat</label>
+                            <input type="checkbox" value="1" id="jumat" name="list_hari[4]" class="form-check-input">
+                            <label for="jumat">Jumat</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="sabtu" id="sabtu" class="form-check-input">
-                            <label for="senin">Sabtu</label>
+                            <input type="checkbox" value="1" id="sabtu" name="list_hari[5]" class="form-check-input">
+                            <label for="sabtu">Sabtu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="minggu" id="minggu" class="form-check-input">
-                            <label for="senin">Minggu</label>
+                            <input type="checkbox" value="1" id="minggu" name="list_hari[6]" class="form-check-input">
+                            <label for="minggu">Minggu</label>
                         </div>
                     </div>
 
-
-                    <label for="catatan_isi" class="form-label">Isi</label>
-                    <textarea name="catatan_isi" id="catatan_isi" class="form-control"></textarea>
+                    <label for="isi_jadwal" class="form-label">Isi</label>
+                    <textarea name="isi_jadwal" id="isi_jadwal" class="form-control"></textarea>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </form>
@@ -188,16 +187,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
-            <form action="../config/catatan/input_catatan.php" method="POST">
+            <form action="../config/catatan/edit_catatan.php" method="POST">
 
                 <div class="modal-body">
                     <input type="hidden" name="id_catatan" id="edit_id_catatan">
 
                     <label for="catatan_judul" class="form-label">Judul</label>
-                    <input type="text" name="catatan_judul" id="edit_judul_catatan" class="form-control">
+                    <input type="text" name="judul_catatan" id="edit_judul_catatan" class="form-control">
 
                     <label for="catatan_isi" class="form-label">Isi</label>
-                    <textarea name="catatan_isi" id="edit_isi_catatan" class="form-control"></textarea>
+                    <textarea name="isi_catatan" id="edit_isi_catatan" class="form-control"></textarea>
                 </div>
 
                 <div class="modal-footer">
