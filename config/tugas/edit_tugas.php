@@ -6,13 +6,12 @@
     $isi_tugas = $_POST["isi_tugas"];
 
     $tanggal_pengingat = $_POST["tanggal_pengingat"];
-    $jam_pengingat = $_POST["waktu_pengingat"];
+    $waktu_pengingat = $_POST["waktu_pengingat"];
     $id_tugas = $_POST["id_tugas"];
 
     // $id_pengguna = $_SESSION['id_pengguna']; -> diambil dari session user
 
-    $execute = mysqli_query($conn, "UPDATE tugas(judul_tugas, isi_tugas, tanggal_pengingat, waktu_pengingat) 
-    VALUES ('$judul_tugas', '$isi_tugas', '$tanggal_pengingat', '$jam_pengingat' WHERE id_tugas = '$id_tugas')");
+    $execute = mysqli_query($conn, "UPDATE tugas SET judul_tugas = '$judul_tugas', tanggal_pengingat = '$tanggal_pengingat', waktu_pengingat = '$waktu_pengingat', isi_tugas = '$isi_tugas' WHERE id_tugas = '$id_tugas'");
 
     if($execute){
         echo "<script>alert('tugas berhasil di input');</script>";

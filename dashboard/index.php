@@ -20,13 +20,17 @@
             <div class="isi-catatan"><?= $data['isi_catatan'] ?></div>
             
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <form action="../config/catatan/hapus_catatan.php" method="post">
-                    <input type="hidden" name="id_catatan">
 
-                </form>
+                <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-danger">Hapus</a>                
+                <button class="btn btn-success btn-sm me-1 edit-button edit-catatan"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal_edit_catatan"
+                        data-id-catatan="<?= $data['id_catatan'] ?>"
+                        data-judul-catatan="<?= $data['judul_catatan'] ?>"
+                        data-isi-catatan="<?= $data['isi_catatan'] ?>">
+                    <i class="fas fas-edit"></i>Edit                
+                </button>
 
-                <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-danger">Hapus</a>
-                <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-warning">Edit</a>
             </div>
 
 
@@ -79,7 +83,18 @@
             
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <a href="../config/tugas/hapus_tugas.php?id_tugas=<?= $data['id_tugas'] ?>" class="btn btn-danger">Hapus</a>
-                <a href="../config/tugas/hapus_tugas.php?id_tugas=<?= $data['id_tugas'] ?>" class="btn btn-warning">Edit</a>
+
+                <button class="btn btn-success btn-sm me-1 edit-button edit-tugas"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal_edit_tugas"
+                        data-id-tugas="<?= $data['id_tugas'] ?>"
+                        data-judul-tugas="<?= $data['judul_tugas'] ?>"
+                        data-tanggal-pengingat="<?= $data['tanggal_pengingat'] ?>"
+                        data-waktu-pengingat="<?= $data['waktu_pengingat'] ?>"
+                        data-isi-tugas="<?= $data['isi_tugas'] ?>">
+                    <i class="fas fas-edit"></i>Edit                
+                </button>
+                
             </div>
 
         </div>

@@ -3,7 +3,7 @@
 
     $judul_catatan = $_POST['catatan_judul'];
     $isi_catatan = $_POST['catatan_isi'];
-    $id_user = $_SESSION['username'];
+    // $id_user = $_SESSION['username'];
 
     $execute = mysqli_query($conn, "INSERT INTO catatan(judul_catatan, isi_catatan) values ('$judul_catatan', '$isi_catatan')");
 

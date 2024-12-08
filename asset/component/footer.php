@@ -181,19 +181,23 @@
 <div class="modal fade" id="modal_edit_catatan" tabindex="1" aria-labelledby="modal_catatan" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
+            <input type="hidden" name="id_catatan">
+
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modal_catatan_label">Input Catatan</h1>
+                <h1 class="modal-title fs-5" id="modal_catatan_label">Edit Catatan</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
             <form action="../config/catatan/input_catatan.php" method="POST">
 
                 <div class="modal-body">
+                    <input type="hidden" name="id_catatan" id="edit_id_catatan">
+
                     <label for="catatan_judul" class="form-label">Judul</label>
-                    <input type="text" name="catatan_judul" id="catatan_judul" class="form-control">
+                    <input type="text" name="catatan_judul" id="edit_judul_catatan" class="form-control">
 
                     <label for="catatan_isi" class="form-label">Isi</label>
-                    <textarea name="catatan_isi" id="catatan_isi" class="form-control"></textarea>
+                    <textarea name="catatan_isi" id="edit_isi_catatan" class="form-control"></textarea>
                 </div>
 
                 <div class="modal-footer">
@@ -206,29 +210,31 @@
     </div>
 </div>
 
-<!-- modal input tugas -->
+<!-- modal edit tugas -->
 <div class="modal fade" id="modal_edit_tugas" tabindex="1" aria-labelledby="modal_tugas" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modal_catatan_label">Input Tugas</h1>
+                <h1 class="modal-title fs-5" id="tugas_label">Edit Tugas</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
-            <form action="../config/tugas/input_tugas.php" method="POST">
+            <form action="../config/tugas/edit_tugas.php" method="POST">
 
                 <div class="modal-body">
+                    <input type="hidden" name="id_tugas" id="edit_id_tugas">
+
                     <label for="tugas_judul" class="form-label">Judul</label>
-                    <input type="text" name="judul_tugas" id="judul_tugas" class="form-control">
+                    <input type="text" name="judul_tugas" id="edit_judul_tugas" class="form-control">
 
                     <label for="hari_tenggat" class="form-label">Hari tenggat</label>
-                    <input type="date" name="tanggal_pengingat" id="tanggal_pengingat" class="form-control">
+                    <input type="date" name="tanggal_pengingat" id="edit_tanggal_pengingat" class="form-control">
 
                     <label for="waktu_tenggat" class="form-label">Jam tenggat</label>
-                    <input type="time" name="waktu_pengingat" id="waktu_pengingat" class="form-control">
+                    <input type="time" name="waktu_pengingat" id="edit_waktu_pengingat" class="form-control">
 
                     <label for="catatan_isi" class="form-label">Isi</label>
-                    <textarea name="isi_tugas" id="isi_tugas" class="form-control"></textarea>
+                    <textarea name="isi_tugas" id="edit_isi_tugas" class="form-control"></textarea>
                 </div>
 
                 <div class="modal-footer">
@@ -355,11 +361,56 @@
 
     // untuk edit catatan
     document.addEventListener('DOMContentLoaded', function () {
-        const edit_buttons = button.querySelectorAll('.edit-button');
-        edit_buttons.foreach(button => {
-            const judul_catatan = 
+        const edit_buttons = document.querySelectorAll('.edit-catatan');
+        edit_buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id_catatan = this.getAttribute('data-id-catatan');
+                const judul_catatan = this.getAttribute('data-judul-catatan');
+                const isi_catatan = this.getAttribute('data-isi-catatan');
+
+                document.getElementById('edit_id_catatan').value = id_catatan;
+                document.getElementById('edit_judul_catatan').value = judul_catatan;
+                document.getElementById('edit_isi_catatan').value = isi_catatan;
+            })
         });
-    })
+    });
+    
+    // untuk edit tugas
+    document.addEventListener('DOMContentLoaded', function () {
+        const edit_buttons = document.querySelectorAll('.edit-tugas');
+        edit_buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id_tugas = this.getAttribute('data-id-tugas');
+                const judul_tugas = this.getAttribute('data-judul-tugas');
+                const tanggal_pengingat = this.getAttribute('data-tanggal-pengingat');
+                const waktu_pengingat = this.getAttribute('data-waktu-pengingat');
+                const isi_tugas = this.getAttribute('data-isi-tugas');
+
+                document.getElementById('edit_id_tugas').value = id_tugas;
+                document.getElementById('edit_judul_tugas').value = judul_tugas;
+                document.getElementById('edit_tanggal_pengingat').value = tanggal_pengingat;
+                document.getElementById('edit_waktu_pengingat').value = waktu_pengingat;
+                document.getElementById('edit_isi_tugas').value = isi_tugas;
+            });
+        });
+    });
+
+    // untuk edit jadwal
+    document.addEventListener('DOMContentLoaded', function () {
+        const edit_buttons =document.querySelectorAll('.edit-jadwal');
+        edit_buttons.forEach(button => {
+            button.addEventListener('click', function () {
+                const id_catatan = this.getAttribute('data-id-catatan');
+                const judul_catatan = this.getAttribute('data-judul-catatan');
+                const isi_catatan = this.getAttribute('data-isi-catatan');
+
+                document.getElementById('edit-id-catatan').value = id_catatan;
+                document.getElementById('edit-judul-catatan').value = judul_catatan;
+                document.getElementById('edit-isi-catatan').value = isi_catatan;
+            })
+        });
+    });
+
 </script>
 
 </body>
