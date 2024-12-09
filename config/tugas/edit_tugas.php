@@ -16,9 +16,11 @@
     if($execute){
         echo "<script>alert('tugas berhasil di input');</script>";
         header("Location: ../../dashboard/");
+        exit();
     }else{
         echo "<script>alert('tugas gagal di input');</script>";
         header("Location: ../../dashboard/");
+        exit();
     }
 
 ?>

@@ -52,10 +52,10 @@
 
     <?php 
 
-        $get_jadwal = mysqli_query($conn, "SELECT judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai, tanggal_selesai FROM jadwal");
+        $get_jadwal = mysqli_query($conn, "SELECT judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai FROM jadwal");
         
-        if(mysqli_num_rows($get_jadwal)) {
-            $data_jadwal = mysqli_fetch_all($get_jadwal);
+        if(mysqli_num_rows($get_jadwal) > 0) {
+            $data_jadwal = mysqli_fetch_all($get_jadwal, MYSQLI_ASSOC);
 
             foreach($data_jadwal as $data) {
 
