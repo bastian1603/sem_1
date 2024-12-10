@@ -12,12 +12,12 @@
     if($execute) {
         echo "<script>
                     alert('Data Berhasil Diubah');
-                    window.location.href = '../../dashboard.php';
+                    window.location.href = '../../dashboard/';
             </script>";
     }else{
         echo "<script>
-                    alert('Data Berhasil Disimpan');
-                    window.location.href = '../../dashboard';
+                    alert('Data Gagal Diubah');
+                    window.location.href = '../../dashboard/';
             </script>";
     }
 

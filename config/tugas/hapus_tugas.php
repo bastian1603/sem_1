@@ -2,7 +2,7 @@
 
     include "../koneksi.php";
 
-    $id_tugas = $_POST["id_tugas"];
+    $id_tugas = $_GET["id_tugas"];
 
     $execute = mysqli_query($conn, "DELETE FROM tugas WHERE id_tugas = '$id_tugas'");
 

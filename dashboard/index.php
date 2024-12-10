@@ -22,10 +22,16 @@
             <div class="isi-catatan"><?= $data['isi_catatan'] ?></div>
             
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <form action="../config/catatan/hapus_catatan.php" method="post">
-                    <input type="hidden" name="id_catatan">
 
-                </form>
+                <a href="../config/catatan/hapus_catatan.php?id_catatan=<?= $data['id_catatan'] ?>" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-danger">Hapus</a>                
+                <button class="btn btn-success btn-sm me-1 edit-button edit-catatan"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal_edit_catatan"
+                        data-id-catatan="<?= $data['id_catatan'] ?>"
+                        data-judul-catatan="<?= $data['judul_catatan'] ?>"
+                        data-isi-catatan="<?= $data['isi_catatan'] ?>">
+                    <i class="fas fas-edit"></i>Edit                
+                </button>
 
                 <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-danger">Hapus</a>
                 <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-warning">Edit</a>
@@ -48,17 +54,30 @@
 <div class="isi_jadwal">
     <h2 class="content-title">Jadwal</h2>
 
-    <div class="tampil-jadwal">
-        <div class="judul-jadwal">[Judul Jadwal 1]</div>
-        <div class="tanggal-jadwal">20 Nov 2024 - 27 Nov 2024</div>
-        <div class="isi-jadwal">[Isi Jadwal 1]</div>
-    </div>
+    <?php 
 
-    <div class="tampil-jadwal">
-        <div class="judul-jadwal">[Judul Jadwal 2]</div>
-        <div class="tanggal-jadwal">28 Nov 2024 - 5 Des 2024</div>
-        <div class="isi-jadwal">[Isi Jadwal 2]</div>
-    </div>
+        $get_jadwal = mysqli_query($conn, "SELECT judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai FROM jadwal");
+        
+        if(mysqli_num_rows($get_jadwal) > 0) {
+            $data_jadwal = mysqli_fetch_all($get_jadwal, MYSQLI_ASSOC);
+
+            foreach($data_jadwal as $data) {
+
+    ?>
+
+        <div class="tampil-jadwal">
+            <div class="judul-jadwal"><?= $data["judul_jadwal"]; ?></div>
+            <div class="tanggal-jadwal"><?= $data["tanggal_mulai"] ?> - <?= $data["tanggal_selesai"] ?></div>
+            <div class="isi-jadwal"><?= $data["isi_jadwal"] ?></div>
+        </div>
+
+    <?php 
+                }
+            } else {
+                echo "Belum ada jadwal dibuat :)";
+            }
+    ?>
+
 </div>
 
 <!-- Bagian Tugas -->
@@ -81,7 +100,18 @@
             
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                 <a href="../config/tugas/hapus_tugas.php?id_tugas=<?= $data['id_tugas'] ?>" class="btn btn-danger">Hapus</a>
-                <a href="../config/tugas/hapus_tugas.php?id_tugas=<?= $data['id_tugas'] ?>" class="btn btn-warning">Edit</a>
+
+                <button class="btn btn-success btn-sm me-1 edit-button edit-tugas"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modal_edit_tugas"
+                        data-id-tugas="<?= $data['id_tugas'] ?>"
+                        data-judul-tugas="<?= $data['judul_tugas'] ?>"
+                        data-tanggal-pengingat="<?= $data['tanggal_pengingat'] ?>"
+                        data-waktu-pengingat="<?= $data['waktu_pengingat'] ?>"
+                        data-isi-tugas="<?= $data['isi_tugas'] ?>">
+                    <i class="fas fas-edit"></i>Edit                
+                </button>
+                
             </div>
 
         </div>
