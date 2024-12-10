@@ -15,7 +15,7 @@
 <body>
 
         <?php 
-            include "../config/koneksi.php";
+        include '../asset/component/sidebar.php';
         ?>
 
         <nav class="navbar bg-body-tertiary">
@@ -59,7 +59,6 @@
             <?php
 
                 $data = mysqli_query($conn, "SELECT judul_catatan, isi_catatan FROM catatan");
-            
             
             ?>
             <div class="card-body catatan">

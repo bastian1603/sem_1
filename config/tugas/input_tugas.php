@@ -10,8 +10,15 @@
 
     // $id_pengguna = $_SESSION['id_pengguna']; -> diambil dari session user
 
-    $execute = mysqli_query($conn, "INSERT INTO tugas(judul_tugas, isi_tugas, hari_pengingat, jam_pengingat, id_user) 
-    VALUES ('$judul_tugas', '$isi_tugas', '$tanggal_pengingat', '$jam_pengingat', '')");
+    $execute = mysqli_query($conn, "INSERT INTO tugas(judul_tugas, isi_tugas, tanggal_pengingat, waktu_pengingat) 
+    VALUES ('$judul_tugas', '$isi_tugas', '$tanggal_pengingat', '$jam_pengingat')");
 
+    if($execute){
+        echo "<script>alert('tugas berhasil di input');</script>";
+        header("Location: ../../dashboard/");
+    }else{
+        echo "<script>alert('tugas gagal di input');</script>";
+        header("Location: ../../dashboard/");
+    }
 
 ?>
