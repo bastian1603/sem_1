@@ -1,3 +1,9 @@
+<?php 
+    include '../config/koneksi.php';
+    include '../config/session.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +19,10 @@
 </head>
 
 <body>
+
+    <?php 
+        include '../config/koneksi.php';
+    ?>
 
     <div class="wrapper">
 

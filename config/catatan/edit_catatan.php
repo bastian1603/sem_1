@@ -1,6 +1,6 @@
 <?php 
-
     include "../koneksi.php";
+    include "../session.php";
 
     $id_catatan = $_POST['id_catatan'];
     $judul_catatan = $_POST['judul_catatan'];

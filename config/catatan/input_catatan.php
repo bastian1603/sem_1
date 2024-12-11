@@ -1,6 +1,6 @@
 <?php 
     include '../koneksi.php';
-    include '../config/session.php';
+    include '../session.php';
 
     $judul_catatan = $_POST['catatan_judul'];
     $isi_catatan = $_POST['catatan_isi'];
@@ -11,15 +11,13 @@
     if($execute) {
         echo "<script>
                     alert('Data Berhasil Disimpan');
-                    
+                    window.location = '../../dashboard';
             </script>";
     }else{
         echo "<script>
                     alert('Data Gagal Disimpan');
-                    
-            </script>";
+                    window.location = '../../dashboard';
+                    </script>";
     }
-
-    header("Location: ../../dashboard");
 
 ?>

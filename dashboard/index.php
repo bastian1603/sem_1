@@ -33,8 +33,6 @@
                     <i class="fas fas-edit"></i>Edit                
                 </button>
 
-                <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-danger">Hapus</a>
-                <a href="../config/catatan/hapus_catatan.php" data-id-catatan="<?= $data["id_catatan"];?>" class="btn btn-warning">Edit</a>
             </div>
 
 
@@ -58,13 +56,13 @@
 
         $get_jadwal = mysqli_query($conn, "SELECT judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai FROM jadwal");
         
-        if(mysqli_num_rows($get_jadwal) > 0) {
+        if(mysqli_num_rows($get_jadwal)) {
             $data_jadwal = mysqli_fetch_all($get_jadwal, MYSQLI_ASSOC);
 
             foreach($data_jadwal as $data) {
 
     ?>
-
+    
         <div class="tampil-jadwal">
             <div class="judul-jadwal"><?= $data["judul_jadwal"]; ?></div>
             <div class="tanggal-jadwal"><?= $data["tanggal_mulai"] ?> - <?= $data["tanggal_selesai"] ?></div>

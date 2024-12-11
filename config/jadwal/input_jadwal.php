@@ -1,5 +1,5 @@
 <?php
-include '../config/session.php';
+include '../session.php';
 
 include "../koneksi.php";
 

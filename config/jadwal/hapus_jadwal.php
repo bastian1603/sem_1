@@ -1,6 +1,7 @@
 <?php 
 
     include "../koneksi.php";
+    include "../session.php";
 
     $id_jadwal = $_POST["id_jadwal"];
 
