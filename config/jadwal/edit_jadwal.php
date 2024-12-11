@@ -25,11 +25,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if($execute){
         echo "<script>alert('tugas berhasil di edit');
-        </script>";
+        window.location = '../../dashboard';</script>";
     }else{
         echo "<script>alert('tugas gagal di edit');
-
-        </script>";
+        window.location = '../../dashboard';</script>";
     }
 }
 ?>
