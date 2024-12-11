@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $i = 0;
     foreach ($data_hari as $hari) {
-        $list_hari[$i] = isset($hari) ? true : false;
+        $list_hari[$i] = isset($hari) ? 1 : 0;
         $i++;
     } 
 

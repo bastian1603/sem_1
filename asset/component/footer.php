@@ -97,38 +97,38 @@
 
                     <div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="senin" name="list_hari[0]" class="form-check-input">
-                            <label for="senin">Senin</label>
+                            <input type="checkbox" value="1" id="senin_input" name="list_hari[0]" class="form-check-input">
+                            <label for="senin_input">Senin</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="selasa" name="list_hari[1]" class="form-check-input">
-                            <label for="selasa">Selasa</label>
+                            <input type="checkbox" value="1" id="selasa_input" name="list_hari[1]" class="form-check-input">
+                            <label for="selasa_input">Selasa</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="rabu" name="list_hari[2]" class="form-check-input">
-                            <label for="rabu">Rabu</label>
+                            <input type="checkbox" value="1" id="rabu_input" name="list_hari[2]" class="form-check-input">
+                            <label for="rabu_input">Rabu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="kamis" name="list_hari[3]" class="form-check-input">
-                            <label for="kamis">Kamis</label>
+                            <input type="checkbox" value="1" id="kamis_input" name="list_hari[3]" class="form-check-input">
+                            <label for="kamis_input">Kamis</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="jumat" name="list_hari[4]" class="form-check-input">
-                            <label for="jumat">Jumat</label>
+                            <input type="checkbox" value="1" id="jumat_input" name="list_hari[4]" class="form-check-input">
+                            <label for="jumat_input">Jumat</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="sabtu" name="list_hari[5]" class="form-check-input">
-                            <label for="sabtu">Sabtu</label>
+                            <input type="checkbox" value="1" id="sabtu_input" name="list_hari[5]" class="form-check-input">
+                            <label for="sabtu_input">Sabtu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="1" id="minggu" name="list_hari[6]" class="form-check-input">
-                            <label for="minggu">Minggu</label>
+                            <input type="checkbox" value="1" id="minggu_input" name="list_hari[6]" class="form-check-input">
+                            <label for="minggu_input">Minggu</label>
                         </div>
                     </div>
 
@@ -255,7 +255,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
-            <form action="" method="POST">
+            <form action="../config/tugas/input_jadwal.php" method="POST">
 
                 <div class="modal-body">
                     <label for="tantangan_judul" class="form-label">Judul</label>
@@ -274,38 +274,38 @@
 
                     <div>
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="senin" id="senin" class="form-check-input">
-                            <label for="senin">Senin</label>
+                            <input type="checkbox" value="1" name="list_hari[0]" id="senin_edit" class="form-check-input">
+                            <label for="senin_edit">Senin</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="selasa" id="selasa" class="form-check-input">
-                            <label for="senin">Selasa</label>
+                            <input type="checkbox" value="1" name="list_hari[1]" id="selasa_edit" class="form-check-input">
+                            <label for="selasa_edit">Selasa</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="rabu" id="rabu" class="form-check-input">
-                            <label for="senin">Rabu</label>
+                            <input type="checkbox" value="1" name="list_hari[2]" id="rabu_edit" class="form-check-input">
+                            <label for="rabu_edit">Rabu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="kamis" id="kamis" class="form-check-input">
-                            <label for="senin">Kamis</label>
+                            <input type="checkbox" value="1" name="list_hari[3]" id="kamis_edit" class="form-check-input">
+                            <label for="kmais_edit">Kamis</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="jumat" id="jumat" class="form-check-input">
-                            <label for="senin">Jumat</label>
+                            <input type="checkbox" value="1" name="list_hari[4]" id="jumat_edit" class="form-check-input">
+                            <label for="jumat_edit">Jumat</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="sabtu" id="sabtu" class="form-check-input">
-                            <label for="senin">Sabtu</label>
+                            <input type="checkbox" value="1" name="list_hari[5]" id="sabtu_edit" class="form-check-input">
+                            <label for="sabtu_edit">Sabtu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input type="checkbox" value="minggu" id="minggu" class="form-check-input">
-                            <label for="senin">Minggu</label>
+                            <input type="checkbox" value="1" name="list_hari[6]" id="minggu_edit" class="form-check-input">
+                            <label for="minggu_edit">Minggu</label>
                         </div>
                     </div>
 
@@ -399,13 +399,36 @@
         const edit_buttons =document.querySelectorAll('.edit-jadwal');
         edit_buttons.forEach(button => {
             button.addEventListener('click', function () {
-                const id_catatan = this.getAttribute('data-id-catatan');
-                const judul_catatan = this.getAttribute('data-judul-catatan');
-                const isi_catatan = this.getAttribute('data-isi-catatan');
+                const id_jadwal = this.getAttribute('data-id-jadwal');
+                const judul_jadwal= this.getAttribute('data-judul-jadwal');
+                const isi_jadwal = this.getAttribute('data-isi-jadwal');
+                const tanggal_mulai = this.getAttribute('data-tanggal-mulai');
+                const tanggal_selesai = this.getAttribute('data-tanggal-selesai');
+                const waktu_pengingat = this.getAttribute('data-waktu-pengingat');
 
-                document.getElementById('edit-id-catatan').value = id_catatan;
-                document.getElementById('edit-judul-catatan').value = judul_catatan;
-                document.getElementById('edit-isi-catatan').value = isi_catatan;
+                const senin = this.getAttribute('data-senin');
+                const selasa = this.getAttribute('data-selasa');
+                const rabu = this.getAttribute('data-rabu');
+                const kamis = this.getAttribute('data-kamis');
+                const jumat = this.getAttribute('data-jumat');
+                const sabtu = this.getAttribute('data-sabtu');
+                const minggu = this.getAttribute('data-minggu');
+                
+                
+                document.getElementById('edit-id-tugas').value = id_tugas;
+                document.getElementById('edit-judul-tugas').value = judul_tugas;
+                document.getElementById('edit-isi-tugas').value = isi_tugas;
+                document.getElementById('edit-tanggal-mulai').value = tanggal_mulai;
+                document.getElementById('edit-tanggal-selesai').value = tanggal_selesai;
+                document.getElementById('edit-waktu-pengingat').value = waktu_pengingat;
+                document.getElementById('edit-senin').value = senin;
+                document.getElementById('edit-selasa').value = selasa;
+                document.getElementById('edit-rabu').value = rabu;
+                document.getElementById('edit-kamis').value = kamis;
+                document.getElementById('edit-jumat').value = jumat;
+                document.getElementById('edit-sabtu').value = sabtu;
+                document.getElementById('edit-minggu').value = minggu;
+                
             })
         });
     });
