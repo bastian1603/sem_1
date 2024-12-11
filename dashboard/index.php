@@ -54,7 +54,8 @@
 
     <?php 
 
-        $get_jadwal = mysqli_query($conn, "SELECT judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai FROM jadwal");
+        $get_jadwal = mysqli_query($conn, "SELECT id_jadwal, judul_jadwal, isi_jadwal, tanggal_mulai, tanggal_selesai, waktu_pengingat, senin, 
+        selasa, rabu, kamis, jumat, sabtu, minggu FROM jadwal WHERE id_user = $id_user");
         
         if(mysqli_num_rows($get_jadwal)) {
             $data_jadwal = mysqli_fetch_all($get_jadwal, MYSQLI_ASSOC);
@@ -78,7 +79,7 @@
                         data-judul-jadwal="<?= $data['judul_jadwal'] ?>"
                         data-tanggal-mulai="<?= $data['tanggal_mulai'] ?>"
                         data-tanggal-selesai="<?= $data['tanggal_selesai'] ?>"
-                        data-waktu-pengingat="<? $data['waktu_pengingat']?>"
+                        data-waktu-pengingat="<?= $data['waktu_pengingat']?>"
                         data-isi-jadwal="<?= $data['isi_jadwal'] ?>"
                         data-senin="<?= $data['senin'] ?>"
                         data-selasa="<?= $data['selasa'] ?>"
@@ -109,7 +110,7 @@
     <h2 class="content-title">Tugas</h2>
 
     <?php 
-        $get_tugas = mysqli_query($conn, "SELECT id_tugas, judul_tugas, isi_tugas, tanggal_pengingat, waktu_pengingat FROM tugas");
+        $get_tugas = mysqli_query($conn, "SELECT id_tugas, judul_tugas, isi_tugas, tanggal_pengingat, waktu_pengingat FROM tugas WHERE id_user = $id_user");
         
         if(mysqli_num_rows($get_tugas)){
             $data_tugas = mysqli_fetch_all($get_tugas, MYSQLI_ASSOC);

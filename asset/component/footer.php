@@ -246,76 +246,78 @@
     </div>
 </div>
 
-<!-- modal input jadwal -->
+<!-- modal edit jadwal -->
 <div class="modal fade" id="modal_edit_jadwal" tabindex="1" aria-labelledby="modal_jadwal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modal_catatan_label">Input jadwal</h1>
+                <h1 class="modal-title fs-5" id="modal_jadwal_label">Edit jadwal</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
 
-            <form action="../config/tugas/input_jadwal.php" method="POST">
+            <form action="../config/jadwal/edit_jadwal.php" method="POST">
 
                 <div class="modal-body">
-                    <label for="tantangan_judul" class="form-label">Judul</label>
-                    <input type="text" name="tantangan_judul" id="tantangan_judul" class="form-control">
+                    <input type="hidden" name="id_jadwal" id="edit_id_jadwal">
 
-                    <label for="tanggal_mulai" class="form-label">Tanggal mulai</label>
-                    <input type="date" name="tanggal_mulai" id="tanggal_mulai" class="form-control">
+                    <label for="edit_judul_jadwal" class="form-label">Judul</label>
+                    <input type="text" name="judul_jadwal" id="edit_judul_jadwal" class="form-control">
 
-                    <label for="tanggal_berakhir" class="form-label">Tanggal berakhir</label>
-                    <input type="date" name="tanggal_berakhir" id="tanggal_berakhir" class="form-control">
+                    <label for="edit_tanggal_mulai" class="form-label">Tanggal mulai</label>
+                    <input type="date" name="tanggal_mulai" id="edit_tanggal_mulai" class="form-control">
 
-                    <label for="waktu_pengingat">Waktu</label>
-                    <input type="time" name="waktu_pengingat" id="waaktu_pengingat" class="form-control">
+                    <label for="edit_tanggal_selesai" class="form-label">Tanggal berakhir</label>
+                    <input type="date" name="tanggal_selesai" id="edit_tanggal_selesai" class="form-control">
+
+                    <label for="edit_waktu_pengingat">Waktu</label>
+                    <input type="time" name="waktu_pengingat" id="edit_waktu_pengingat" class="form-control">
 
                     <label for="hari_melakukan">dilakukan pada hari</label>
 
                     <div>
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[0]" id="senin_edit" class="form-check-input">
-                            <label for="senin_edit">Senin</label>
+                            <label for="senin">Senin</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[1]" id="selasa_edit" class="form-check-input">
-                            <label for="selasa_edit">Selasa</label>
+                            <label for="selasa">Selasa</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[2]" id="rabu_edit" class="form-check-input">
-                            <label for="rabu_edit">Rabu</label>
+                            <label for="rabu">Rabu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[3]" id="kamis_edit" class="form-check-input">
-                            <label for="kmais_edit">Kamis</label>
+                            <label for="kmais">Kamis</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[4]" id="jumat_edit" class="form-check-input">
-                            <label for="jumat_edit">Jumat</label>
+                            <label for="jumat">Jumat</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[5]" id="sabtu_edit" class="form-check-input">
-                            <label for="sabtu_edit">Sabtu</label>
+                            <label for="sabtu">Sabtu</label>
                         </div>
 
                         <div class="form-check form-check-inline">
                             <input type="checkbox" value="1" name="list_hari[6]" id="minggu_edit" class="form-check-input">
-                            <label for="minggu_edit">Minggu</label>
+                            <label for="minggu">Minggu</label>
                         </div>
                     </div>
 
 
-                    <label for="catatan_isi" class="form-label">Isi</label>
-                    <textarea name="catatan_isi" id="catatan_isi" class="form-control"></textarea>
+                    <label for="edit_isi_jadwal" class="form-label">Isi</label>
+                    <textarea name="isi_jadwal" id="edit_isi_jadwal" class="form-control"></textarea>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
                 </div>
             </form>
@@ -396,7 +398,7 @@
 
     // untuk edit jadwal
     document.addEventListener('DOMContentLoaded', function () {
-        const edit_buttons =document.querySelectorAll('.edit-jadwal');
+        const edit_buttons = document.querySelectorAll('.edit-jadwal');
         edit_buttons.forEach(button => {
             button.addEventListener('click', function () {
                 const id_jadwal = this.getAttribute('data-id-jadwal');
@@ -413,21 +415,21 @@
                 const jumat = this.getAttribute('data-jumat');
                 const sabtu = this.getAttribute('data-sabtu');
                 const minggu = this.getAttribute('data-minggu');
-                
-                
-                document.getElementById('edit-id-tugas').value = id_tugas;
-                document.getElementById('edit-judul-tugas').value = judul_tugas;
-                document.getElementById('edit-isi-tugas').value = isi_tugas;
-                document.getElementById('edit-tanggal-mulai').value = tanggal_mulai;
-                document.getElementById('edit-tanggal-selesai').value = tanggal_selesai;
-                document.getElementById('edit-waktu-pengingat').value = waktu_pengingat;
-                document.getElementById('edit-senin').value = senin;
-                document.getElementById('edit-selasa').value = selasa;
-                document.getElementById('edit-rabu').value = rabu;
-                document.getElementById('edit-kamis').value = kamis;
-                document.getElementById('edit-jumat').value = jumat;
-                document.getElementById('edit-sabtu').value = sabtu;
-                document.getElementById('edit-minggu').value = minggu;
+
+                document.getElementById('edit_id_jadwal').value = id_jadwal;
+                document.getElementById('edit_judul_jadwal').value = judul_jadwal;
+                document.getElementById('edit_isi_jadwal').value = isi_jadwal;
+                document.getElementById('edit_tanggal_mulai').value = tanggal_mulai;
+                document.getElementById('edit_tanggal_selesai').value = tanggal_selesai;
+                document.getElementById('edit_waktu_pengingat').value = waktu_pengingat;
+
+                document.getElementById('senin_edit').checked = senin == 1;
+                document.getElementById('selasa_edit').checked = selasa == 1;
+                document.getElementById('rabu_edit').checked = rabu == 1;
+                document.getElementById('kamis_edit').checked = kamis == 1;
+                document.getElementById('jumat_edit').checked = jumat == 1;
+                document.getElementById('sabtu_edit').checked = sabtu == 1;
+                document.getElementById('minggu_edit').checked = minggu == 1;
                 
             })
         });
